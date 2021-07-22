@@ -8,6 +8,11 @@ import { gameTimer, timeLeft } from './timer.js'
 let lastRenderTime = 0
 export let gameStatus = ''
 
+//SoundFx
+export const cowBell = new Audio('../audio/cowbell.wav')
+const cowMoo = new Audio('../audio/cowmoo.mp3')
+const cowWin = new Audio('../audio/cowwin.wav')
+const cowLose = new Audio('../audio/cowlose.wav')
 
 
 /* ===== CACHED ELEMENT REFS ===== */
@@ -17,11 +22,9 @@ const startBtnEl = document.getElementById('startBtn')
 const howToEl = document.getElementById('howTo')
 
 
-
 /* ===== EVENT LISTENERS ===== */
 startBtnEl.addEventListener('click', start)
 howToEl.addEventListener('click', howToAlert)
-
 
 
 /* ===== FUNCTIONS ===== */
@@ -60,6 +63,7 @@ function drawLoop() {
 //Function for START button (starts main game loop and game timer):
 function start() {
   window.requestAnimationFrame(playGame)
+  cowMoo.play()
   gameTimer()
 }
 

@@ -1,6 +1,6 @@
 /* ===== IMPORTS ===== */
 import { randomGridPosition } from './grid.js'
-import { gameStatus } from './app.js'
+import { gameStatus, cowBell } from './app.js'
 import { onCow } from './cow.js'
 
 
@@ -17,6 +17,7 @@ const scoreAmount = 1
 export function updateGrass() {
   if(onCow(grass)) {
     addScore(scoreAmount)
+    cowBell.play()
     grass = getRandomGrassPosition()
   }
 }
