@@ -1,6 +1,7 @@
 /* ===== IMPORTS ===== */
 import { cowSpeed, updateCow, drawCow } from './cow.js'
 import { updateGrass, drawGrass, gameScore } from './grass.js'
+import { gameTimer, timeLeft } from './timer.js'
 
 
 /* ===== CONSTANTS / VARIABLES ===== */
@@ -59,9 +60,10 @@ function drawLoop() {
 //Function for START button (starts main game loop and game timer):
 function start() {
   window.requestAnimationFrame(playGame)
-  // gameTimer()
+  gameTimer()
 }
 
+//Triggers alert window in browser with game instructions:
 function howToAlert() {
   window.alert('Use the arrow keys to move the cow and eat the delicious grass! Eat 10 patches of grass before time is up to win.')
 }
