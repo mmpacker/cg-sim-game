@@ -10,14 +10,16 @@ export let gameStatus = ''
 
 
 /* ===== CACHED ELEMENT REFS ===== */
-const gameField = document.getElementById('fieldGrid')
+const gameFieldEl = document.getElementById('fieldGrid')
 const messageEl = document.getElementById('message')
-const startBtn = document.getElementById('startBtn')
+const startBtnEl = document.getElementById('startBtn')
+const howToEl = document.getElementById('howTo')
 
 
 
 /* ===== EVENT LISTENERS ===== */
-
+startBtnEl.addEventListener('click', start)
+howToEl.addEventListener('click', howToAlert)
 
 
 
@@ -46,9 +48,9 @@ function updateLoop() {
 /* ===== RENDER FUNCTIONS ===== */
 
 function drawLoop() {
-  gameField.innerHTML = ''
-  drawCow(gameField)
-  drawGrass(gameField)
+  gameFieldEl.innerHTML = ''
+  drawCow(gameFieldEl)
+  drawGrass(gameFieldEl)
 }
 
 
@@ -60,5 +62,6 @@ function start() {
   // gameTimer()
 }
 
-//delete later
-window.requestAnimationFrame(playGame)
+function howToAlert() {
+  window.alert('Use the arrow keys to move the cow and eat the delicious grass! Eat 10 patches of grass before time is up to win.')
+}
