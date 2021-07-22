@@ -9,7 +9,9 @@ export let gameStatus = ''
 
 
 /* ===== CACHED ELEMENT REFS ===== */
-
+const gameField = document.getElementById('fieldGrid')
+const messageEl = document.getElementById('message')
+const startBtn = document.getElementById('startBtn')
 
 
 
@@ -42,7 +44,8 @@ function updateLoop() {
 /* ===== RENDER FUNCTIONS ===== */
 
 function drawLoop() {
-  drawCow()
+  gameField.innerHTML = ''
+  drawCow(gameField)
 }
 
 

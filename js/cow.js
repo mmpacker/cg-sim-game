@@ -1,8 +1,14 @@
+/* ===== IMPORTS ===== */
 import { gameStatus } from './app.js'
+import { getInputMove } from './input.js'
 
+
+/* ===== CONSTANTS / VARIABLES ===== */
 export const cowSpeed = 10
 export const cowPosition = {x: 9, y: 9}
 
+
+/* ===== FUNCTIONS ===== */
 export function updateCow() {
   const inputMove = getInputMove()
   cowPosition.x += inputMove.x
