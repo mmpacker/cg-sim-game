@@ -5,7 +5,7 @@ import { gameStatus } from './app.js'
 /* ===== CONSTANTS / VARIABLES ===== */
 
 //Sets the default starting game time
-export let timeLeft = 10
+export let timeLeft = 30
 
 
 /* ===== EVENT LISTENERS ===== */
