@@ -33,6 +33,8 @@ window.addEventListener('keydown', e => {
 
 
 /* ===== FUNCTIONS ===== */
+
+//Gets the value of the latest user input to move the cow
 export function getInputMove() {
   return inputMove
 }

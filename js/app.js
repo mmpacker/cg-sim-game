@@ -11,8 +11,8 @@ export let gameStatus = ''
 //SoundFx
 export const cowBell = new Audio('../audio/cowbell.wav')
 const cowMoo = new Audio('../audio/cowmoo.mp3')
-const cowWin = new Audio('../audio/cowwin.wav')
-const cowLose = new Audio('../audio/cowlose.wav')
+let cowWin = new Audio('../audio/cowwin.wav')
+let cowLose = new Audio('../audio/cowlose.wav')
 
 
 /* ===== CACHED ELEMENT REFS ===== */
@@ -44,13 +44,43 @@ function playGame(currentTime) {
   drawLoop()
 }
 
+//Changes the game status based on conditions
+function updateGameStatus() {
+  if(gameScore >= 10) {
+    gameStatus = 'win'
+  } else if( timeLeft === -1) {
+    gameStatus = 'gameOver'
+  } else {
+    gameStatus = null
+  }
+}
+
+//Checks current game status for win/lose conditions and changes messaging/sfx/gameField based on status
+function checkGameStatus() {
+  if( gameStatus === 'win') {
+    messageEl.innerText = 'You Win!'
+    cowWin.play()
+    cowWin = null
+    gameFieldEl.innerHTML = ''
+  } else if( gameStatus === 'gameOver') {
+    messageEl.innerText = `Time's up! Better Luck Next Time.`
+    cowLose.play()
+    cowLose = null
+    gameFieldEl.innerHTML = ''
+  }
+}
+
+//Updates position of cow and grass; updates and checks game status for win/lose conditions
 function updateLoop() {
   updateCow()
   updateGrass()
+  updateGameStatus()
+  checkGameStatus()
 }
 
 /* ===== RENDER FUNCTIONS ===== */
 
+//Calls functions to draw cow and grass on gameField
 function drawLoop() {
   gameFieldEl.innerHTML = ''
   drawCow(gameFieldEl)
