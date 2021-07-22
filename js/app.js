@@ -58,12 +58,13 @@ function updateGameStatus() {
 //Checks current game status for win/lose conditions and changes messaging/sfx/gameField based on status
 function checkGameStatus() {
   if( gameStatus === 'win') {
-    messageEl.innerText = 'You Win!'
+    messageEl.innerText = 'You Win! Refresh to play again.'
     cowWin.play()
+    confetti.start()
     cowWin = null
     gameFieldEl.innerHTML = ''
   } else if( gameStatus === 'gameOver') {
-    messageEl.innerText = `Time's up! Better Luck Next Time.`
+    messageEl.innerText = `Time's up! Refresh to try again.`
     cowLose.play()
     cowLose = null
     gameFieldEl.innerHTML = ''
