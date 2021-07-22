@@ -1,5 +1,6 @@
 /* ===== IMPORTS ===== */
 import { cowSpeed, updateCow, drawCow } from './cow.js'
+import { updateGrass, drawGrass, gameScore } from './grass.js'
 
 
 /* ===== CONSTANTS / VARIABLES ===== */
@@ -39,6 +40,7 @@ function playGame(currentTime) {
 
 function updateLoop() {
   updateCow()
+  updateGrass()
 }
 
 /* ===== RENDER FUNCTIONS ===== */
@@ -46,6 +48,7 @@ function updateLoop() {
 function drawLoop() {
   gameField.innerHTML = ''
   drawCow(gameField)
+  drawGrass(gameField)
 }
 
 
@@ -58,4 +61,4 @@ function start() {
 }
 
 //delete later
-// window.requestAnimationFrame(playGame)
+window.requestAnimationFrame(playGame)

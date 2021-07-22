@@ -9,6 +9,8 @@ export const cowPosition = {x: 9, y: 9}
 
 
 /* ===== FUNCTIONS ===== */
+
+//Updates the cow's position based on user inputs
 export function updateCow() {
   const inputMove = getInputMove()
   cowPosition.x += inputMove.x
@@ -17,6 +19,7 @@ export function updateCow() {
   inputMove.y = 0
 }
 
+//Adds the cow image to the game field
 export function drawCow(gameField) {
   const cowEl = document.createElement('img')
   if(gameStatus === 'win' || gameStatus === 'gameOver') {
@@ -29,4 +32,13 @@ export function drawCow(gameField) {
   cowEl.src = 'images/cow.png'
   
   gameField.appendChild(cowEl)
+}
+
+//Checks whether a set of coordinates overlaps with the cow's current position; used to interact with grass; used when generating a random position for a new patch of grass
+export function onCow(position) {
+  if(cowPosition.x === position.x && cowPosition.y === position.y) {
+    return true
+  } else {
+    return false
+  }
 }

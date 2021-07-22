@@ -63,10 +63,10 @@ footer {
 #fieldGrid {
   background-color: rgb(91, 77, 77);
   width: 800px;
-  height: 500px;
+  height: 480px;
   display: grid;
-  grid-template-rows: repeat(12, 40px)
-  grid-template-columns: repeat(20, 40px)
+  grid-template-rows: repeat(12, 40px);
+  grid-template-columns: repeat(20, 40px);
 }
 
 #scoreBoard {
@@ -106,7 +106,14 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  object-fit: cover;
+  max-width: 38px;
+  max-height: 38px;
+}
+
+#grass {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   max-width: 38px;
   max-height: 38px;
 }
