@@ -48,6 +48,8 @@ I hope you enjoy playing my game!
 
 * The fonts used in this project were sourced from [Google Fonts](https://fonts.google.com/).
   
+* The icon used in this project was sourced from [Font Awesome](https://fontawesome.com/).
+  
 * The 'confetti' effect that I used in this project was found on the [CSS Script](https://www.cssscript.com/confetti-falling-animation/) site. Thanks to the author, 'mathusummut', for the great app and easy-to-follow implementation instructions.
   
 * FreePNGClipArt.com - [Cow Image](http://www.freepngclipart.com/free-png/3132-black-and-white-cow-png-image)
