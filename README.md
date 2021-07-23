@@ -14,7 +14,7 @@ I hope you enjoy playing my game!
 
 ## Getting Started:
 
-*Happy Cow* was deployed using Surge, and can be launched here: [LAUNCH HAPPY COW](www.google.com).
+*Happy Cow* was deployed using Surge, and can be launched here: [LAUNCH HAPPY COW](https://mp-cg-sim-game.surge.sh/).
 
 ##### How to Play:
 
