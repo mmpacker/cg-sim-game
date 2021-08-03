@@ -2,6 +2,7 @@
 import { cowSpeed, updateCow, drawCow } from './cow.js'
 import { updateGrass, drawGrass, gameScore } from './grass.js'
 import { gameTimer, timeLeft } from './timer.js'
+import { instructions, instructionMove } from './input.js'
 
 
 /* ===== CONSTANTS / VARIABLES ===== */
@@ -93,9 +94,17 @@ function drawLoop() {
 
 //Function for START button (starts main game loop and game timer):
 function start() {
-  window.requestAnimationFrame(playGame)
-  cowMoo.play()
-  gameTimer()
+  //If hard-coded instructions exist in the instructions array in input.js, the hard-coded commands will be executed at 1 second intervals - - If no instructions exist in the array, the game will play normally with user inputs:
+  if(instructions.length) {
+    window.requestAnimationFrame(playGame)
+    cowMoo.play()
+    gameTimer()
+    setTimeout(instructionMove, 1000)
+  } else {
+    window.requestAnimationFrame(playGame)
+    cowMoo.play()
+    gameTimer()
+  }
 }
 
 //Triggers alert window in browser with game instructions:

@@ -1,5 +1,5 @@
 /* ===== IMPORTS ===== */
-import { gameStatus } from './app.js'
+import { cowBell, gameStatus } from './app.js'
 import { getInputMove } from './input.js'
 
 
@@ -12,6 +12,8 @@ export const cowPosition = {x: 9, y: 9}
 
 //Updates the cow's position based on user inputs
 export function updateCow() {
+  //added console log to show cow position as it moves using hard-coded instructions
+  console.log(cowPosition)
   const inputMove = getInputMove()
   cowPosition.x += inputMove.x
   cowPosition.y += inputMove.y
