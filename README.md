@@ -75,3 +75,5 @@ I hope you enjoy playing my game!
 * [Snake Game with JavaScript](https://medium.com/writeabyte/snake-game-5aaeb80a261a)
   
 * [Build a Countdown Timer](https://www.youtube.com/watch?v=vSV_Ml2_A88)
+  
+* [Recursive setTimeout - Devin Pierce](https://medium.com/@devinmpierce/recursive-settimeout-8eb953b02b98)
